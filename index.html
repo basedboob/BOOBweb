@@ -237,6 +237,7 @@
       padding:12px 14px;
       box-shadow:5px 5px 0 #000;
       max-width:100%;
+      max-height: 50px;
     }
     .copy-input{
       border:0;
@@ -250,9 +251,16 @@
       flex:0 0 auto;
     }
     .copy-btn{
-      flex:0 0 auto;
-      position:relative;
-      z-index:1;
+      top: 18px;
+      bottom: auto;  /* on annule le bottom */
+      right: 18px;
+    }
+    .btn {
+      line-height: 1;      /* empêche que le texte/icon étire le bouton */
+      padding: 8px 10px;   /* ajuste la hauteur */
+      display: flex;       /* centre parfaitement l'icône */
+      align-items: center;
+      justify-content: center;
     }
 
     /* Galerie */
@@ -260,6 +268,164 @@
 
     /* Effets JS ajoutés */
     .gsap-card-animation { opacity: 0; transform: translateY(50px); }
+
+    /* ================= BREAKPOINTS STABLES ================= */
+
+    /* ===== Desktop : ≥1200px — on RESTAURE ton rendu initial ===== */
+    @media (min-width: 1200px) {
+      /* HERO image (ancienne config) */
+      .hero-gif {
+        width: 1800px !important;
+        height: 650px !important;
+        margin-left: -500px !important;
+        margin-top: -650px !important;
+        padding-top: 100px !important;
+        position: relative !important;
+        z-index: -2 !important;
+      }
+      /* Boutons du hero */
+      .hero-1 .btn {
+        margin-top: 200px !important;
+      }
+      /* Bloc copier contrat */
+      .contract-copy-col {
+        margin-left: 400px !important;
+      }
+      /* What is BOOB : actions + images latérales */
+      .about-actions {
+        padding-left: 150px !important;
+      }
+      .about-side-images {
+        margin-left: 180px !important;
+      }
+    }
+
+    /* ===== Tablette : 576–1199px — rendu intermédiaire propre ===== */
+    @media (min-width: 576px) and (max-width: 1199.98px) {
+      .hero-gif {
+        display: block;
+        max-width: 100%;
+        width: 100%;
+        height: auto !important;
+        margin: 24px auto 0 !important;
+        padding-top: 0 !important;
+        position: relative !important;
+        left: 0 !important;
+        right: 0 !important;
+      }
+      .hero-1 .btn { margin-top: 24px !important; }
+
+      .contract-copy-col {
+        margin: 0 !important;
+        padding: 0 24px !important;
+        display: flex;
+        justify-content: center;
+      }
+
+      .about-actions {
+        padding-left: 0 !important;
+        display: flex !important;
+        justify-content: center !important;
+        gap: 16px !important;
+        flex-wrap: wrap !important;
+      }
+
+      .about-side-images {
+        margin-left: 0 !important;
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+      }
+      .about-side-images img {
+        width: 42%;
+        height: auto;
+      }
+
+      /* How to buy : 2 par ligne sans chevauchement */
+      .custom-oval {
+        max-width: 420px !important;
+        width: 100% !important;
+        min-height: 170px !important;
+        padding: 16px 18px !important;
+        margin-top: 0 !important;
+      }
+      .oval-inner { max-width: 100% !important; }
+    }
+
+    /* ===== Mobile : ≤576px — fixes “anti-casse” ===== */
+    @media (max-width: 575.98px) {
+      /* HERO GIF fluide */
+      .hero-gif {
+        display: block;
+        max-width: 100%;
+        width: 100%;
+        height: auto !important;
+        margin: 16px auto 0 !important;
+        padding-top: 0 !important;
+        position: relative !important;
+        left: 0 !important;
+        right: 0 !important;
+      }
+      /* Boutons du hero */
+      .hero-1 .btn { margin-top: 12px !important; }
+
+      /* Copier contrat : centré, sans décalage */
+      .copy-wrap { margin: 16px auto !important; }
+      .contract-copy-col {
+        margin: 0 !important;
+        padding: 0 16px !important;
+        display: flex;
+        justify-content: center;
+      }
+
+      /* What is BOOB : 3 boutons & images */
+      .about-actions {
+        padding-left: 0 !important;
+        display: flex !important;
+        justify-content: center !important;
+        gap: 12px !important;
+        flex-wrap: wrap !important;
+      }
+      .about-actions .btn, .about-actions .btn-icon { margin: 0 !important; }
+
+      .about-side-images {
+        margin-left: 0 !important;
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .about-side-images img { width: 48%; height: auto; }
+
+      /* How to buy : 1 par ligne, typographie réduite */
+      .howto-section .row > [class*="col-"] {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 12px;
+      }
+      .custom-oval {
+        max-width: 460px !important;
+        width: 100% !important;
+        min-height: 160px !important;
+        padding: 14px 16px !important;
+        margin-top: 0 !important;
+      }
+      .oval-inner { max-width: 100% !important; }
+      .custom-title { font-size: 16px !important; margin-top: 8px !important; }
+      .custom-text { font-size: 14px !important; line-height: 1.35 !important; }
+
+      /* Grilles diverses */
+      .tok-grid { grid-template-columns: 1fr !important; }
+      .tok-card { padding: 18px !important; }
+      .roadmap-grid { grid-template-columns: 1fr !important; }
+
+      /* Anti débordements */
+      html, body { overflow-x: hidden; }
+      .container, .container-fluid { padding-left: 16px; padding-right: 16px; }
+    }
+
+
+
   </style>
 </head>
 
@@ -321,18 +487,14 @@
             </div>
 
             <!-- Image hero (inline styles conservés) -->
-            <div>
-              <img
-                src="assets/img/boob_logo_2.gif"
-                alt="image"
-                style="margin-left:-500px ;width:1800px; height:650px;margin-top:-650px; padding-top: 100px; z-index:-2;position: relative;"
-              />
+            <div class="hero-bleed px-0">
+              <img src="assets/img/boob_logo_2.gif" alt="image" class="hero-gif" />
             </div>
           </div>
         </div>
 
         <!-- Contract copier -->
-        <div class="col-12" style="margin:20px; margin-left: 400px;">
+        <div class="col-12 contract-copy-col" style="margin:20px;">
           <div class="copy-wrap gsap-fade-in" data-scroll-trigger="true" data-y="10">
             <input id="copyInput"
                    type="text"
@@ -340,10 +502,11 @@
                    value="0x6d2B398D6430cd16A57667661a51A8b0FaA2BBaf"
                    readonly
                    size="44" />
-            <button type="button" class="btn btn-icon btn-secondary copy-btn" onclick="copyToClipboard()">
+            <button type="button" class="btn-icon btn-secondary copy-btn" onclick="copyToClipboard()" style="color:#695897; background-color:#9AD1F7FF;">
               <iconify-icon icon="iconamoon:copy-light"></iconify-icon>
             </button>
           </div>
+
         </div>
 
 
@@ -351,19 +514,15 @@
     </section>
     <!-- ============== HERO END ============== -->
 
-    <!-- ================= TICKER HORIZONTAL ================= -->
+    <!-- ================= TICKER3 ================= -->
     <section class="ticker-2 py-4 border-top border-bottom border-2x border-dark gsap-fade-in"
-             data-delay="3.5"
+             data-delay="1"
              style="transform:none; background:#9ad1f7; color:#fff; width:100%; border-radius:50px; overflow:hidden;">
       <div class="container-fluid p-0">
         <div class="row g-0">
           <div class="col-12">
             <div class="scroller-x" data-speed="fast" data-direction="right">
               <ul class="list list-row align-items-center gap-4 scroller-x__list">
-                <li><img src="assets/img/hero_boob2.png" alt="image" class="img-fluid" width="100px" height="50px" /></li>
-                <li><img src="assets/img/boob_logo_1.gif" alt="image" class="img-fluid" width="200px" height="100%" /></li>
-                <li><img src="assets/img/hero_boob2.png" alt="image" class="img-fluid" width="100px" height="50px" /></li>
-                <li><h4 class="mb-0 text-secondary text-stroke text-shadow">BASED BOOB</h4></li>
                 <li><img src="assets/img/hero_boob2.png" alt="image" class="img-fluid" width="100px" height="50px" /></li>
                 <li><img src="assets/img/boob_logo_1.gif" alt="image" class="img-fluid" width="200px" height="100%" /></li>
                 <li><img src="assets/img/hero_boob2.png" alt="image" class="img-fluid" width="100px" height="50px" /></li>
@@ -396,7 +555,7 @@
 
               </p>
 
-              <div class="d-flex align-items-center flex-wrap gap-6" style="padding-left: 150px;">
+              <div class="d-flex align-items-center flex-wrap gap-6 about-actions">
 
 
                 <ul class="list list-row align-items-center flex-wrap gap-4">
@@ -421,7 +580,7 @@
             </div>
           </div>
 
-          <div class="col-md-3" style="margin-left: 180px;">
+          <div class="col-md-3 about-side-images">
             <img src="assets/img/img5.png" alt="image" class="img-fluid gsap-fade-in" data-scroll-trigger="true" data-y="10"
                  style="margin-bottom : 20px;background-color: #9ad1f7; border-radius: 8px; padding: 10px; box-shadow: 10px 10px 0px #212529;" />
             <img src="assets/img/img6.png" alt="image" class="img-fluid gsap-fade-in" data-scroll-trigger="true" data-y="10"
@@ -456,7 +615,7 @@
               <div class="container">
                 <div class="row justify-content-center">
 
-                  <div class="col-6 col-md-3 d-flex justify-content-center">
+                  <div class="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
                     <div class="oval-card custom-oval gsap-card-animation" data-delay="0.2">
                       <div class="oval-inner">
                         <h6 class="oval-title custom-title">SET UP A WALLET</h6>
@@ -492,7 +651,7 @@
                         <h6 class="oval-title custom-title">SWAP ON PHANTOM <br> OR UNISWAP</h6>
                         <hr class="oval-sep" />
                         <p class="oval-text custom-text">Open your wallet on Phantom or Uniswap,<br>search for
-                           $BOOB CA (it's : 0x6d2B398D6430cd16A<br>57667661a51A8b<br>0FaA2BBaf),<br>and swap your ETH for BASED BOOB</p>
+                          $BOOB CA (it's : 0x6d2B398D6430cd16A<br>57667661a51A8b<br>0FaA2BBaf),<br>and swap your ETH for BASED BOOB</p>
                       </div>
                     </div>
                   </div>
