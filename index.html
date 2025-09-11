@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Meta -->
+  <meta name="description" content="Memeworld: A feature-rich HTML template for memecoin, crypto, and ICO projects. Modern design, responsive layout, and ready for Crypto Project" />
+  <meta name="keywords" content="memecoin, crypto, ico, html template, themeforest, meme coin, cryptocurrency, blockchain, token, landing page, web3, nft, decentralized, finance, investment" />
+  <meta name="author" content="bplugins" />
+  <title>BASED BOOB</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/img/logo_boob.gif" type="image/png" />
+
+  <!-- CSS vendor -->
+  <link rel="stylesheet" href="assets/css/bootstrap.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap-icons.css" />
+  <link rel="stylesheet" href="assets/css/simplebar.css" />
+  <link rel="stylesheet" href="assets/css/swiper-bundle.css" />
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="assets/css/ff-1.css" />
+  <link rel="stylesheet" href="assets/css/ff-2.css" />
+
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- ===== Variables & styles custom (valeurs essentielles) ===== -->
+  <style>
+    /* Thème bleu – light + dark */
+    :root,
+    [data-bs-theme="light"] {
+      --bs-primary: #280033;
+      --bs-primary-rgb: 40,0,51;
+      --bs-link-color: var(--bs-primary);
+      --bs-link-hover-color: color-mix(in srgb, var(--bs-primary), #000 20%);
+    }
+    [data-bs-theme="dark"] {
+      --bs-primary: #280033;
+      --bs-primary-rgb: 40,0,51;
+    }
+    :root,
+    [data-bs-theme="light"],
+    [data-bs-theme="dark"] {
+      --bs-secondary: #695897;
+      --bs-secondary-rgb: 105,88,151;
+    }
+
+    /* Palette/how-to */
+    :root{
+      --blue-light: #9AD1F7FF;
+      --oval-bg: #d167e5;
+      --oval-border: #1e1f22;
+      --oval-text-color: #695897;
+    }
+
+    /* Section How To */
+    .howto-section{
+      background: var(--blue-light) url("assets/img/img1.png") no-repeat center center;
+      background-size: cover;
+      padding-top: 0px;
+      padding-bottom: 200px;
+      min-height: 800px;
+    }
+    .section-space-top,
+    .section-space-y,
+    .section-space-md-bottom,
+    .how-to-buy-section-1 { background: transparent !important; }
+    .how-to-buy-section-1 .container .row.align-items-center {
+      justify-content: center;
+      margin-top: -40px;
+    }
+    .howto-section .row.align-items-center { --bs-gutter-x: 1rem; }
+
+    .oval-card{
+      background-color: var(--oval-bg);
+      border: 5px solid var(--oval-border);
+      border-radius: 1000px;
+      max-width: clamp(320px, 90%, 480px);
+      width: 100%;
+      min-height: clamp(200px, 24vw, 320px);
+      margin: 4px auto;
+      padding: clamp(18px, 2vw, 28px) clamp(24px, 2.5vw, 36px);
+      display: flex; flex-direction: column; justify-content: flex-start; text-align: center;
+      position: relative; z-index: 1;
+      box-shadow:
+        0 6px 15px rgba(0,0,0,0.25),
+        0 12px 30px rgba(0,0,0,0.20),
+        0 20px 60px rgba(0,0,0,0.15);
+      filter:
+        drop-shadow(0 6px 15px rgba(0,0,0,0.25))
+        drop-shadow(0 12px 30px rgba(0,0,0,0.20))
+        drop-shadow(0 20px 60px rgba(0,0,0,0.15));
+    }
+    .oval-inner { max-width: 85%; margin: 0 auto; }
+    .oval-title{
+      font-weight: 800;
+      font-size: clamp(18px, 2vw, 26px);
+      line-height: 1.25;
+      text-transform: uppercase;
+      text-align: center;
+      color: var(--oval-text-color);
+      margin: 0 0 clamp(8px, 1vw, 12px);
+    }
+    .title-color-1{ color: var(--oval-text-color); }
+    .oval-sep{
+      border: 0; border-top: 3px solid var(--oval-border); width: 82%;
+      margin: 0 auto clamp(12px, 1.4vw, 16px); opacity: .7;
+    }
+    .title-color-2{ color: var(--blue-light); }
+
+    .oval-text {
+      font-size: clamp(14px, 1.8vw, 20px);
+      line-height: 1.5;
+      color: var(--oval-text-color);
+      margin: 0; text-align: center;
+    }
+
+    .roadmap-section {
+      background: url("assets/img/img8.png") no-repeat center center;
+      background-size: cover;
+      padding: 60px 0;
+      margin-top: 50px;
+    }
+
+    /* Tokenomics */
+    .tok-grid{
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(12px, 2vw, 24px);
+      align-items: stretch;
+    }
+    .tok-card{
+      background: var(--blue-light);
+      border: 1px solid #111;
+      border-radius: 12px;
+      padding: clamp(16px, 2.2vw, 32px);
+      box-shadow: 5px 5px 0 #000;
+      display: flex; align-items: center; justify-content: center; text-align: center;
+      height: 100%;
+    }
+    .tok-card h2{
+      margin: 0; font-weight: 800; font-size: clamp(18px, 2.8vw, 36px); line-height: 1.2;
+      overflow-wrap: anywhere; word-break: break-word; hyphens: auto;
+      color: var(--oval-text-color);
+    }
+
+    /* Bloc texte ABOUT */
+    .about-box {
+      background: url('assets/img/hero-boob1.jpeg') center/cover no-repeat;
+      background-color: #9ad1f7; /* fallback */
+      background-size: 70%;
+    }
+    .about-title {
+      text-align: center;
+      display: block;
+      margin-bottom: 20px;
+    }
+    /* Texte ABOUT */
+    .about-text {
+      font-size: clamp(16px, 1.4vw, 22px); /* taille responsive */
+      line-height: 1.6;
+      color: #d167e5; /* couleur modifiable */
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+
+
+    /* Tickers horizontaux (structure conservée via classes du thème) */
+
+    /* Roadmap 2 colonnes */
+    .roadmap-grid{
+      width: min(1200px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(340px, 1fr));
+      gap: clamp(16px, 2.5vw, 28px);
+      align-items: stretch;
+    }
+    .roadmap-card{
+      background: var(--oval-text-color);
+      border: 1px solid #111;
+      border-radius: 14px;
+      padding: clamp(22px, 3vw, 44px);
+      box-shadow: 5px 5px 0 #000;
+      height: 100%;
+      display: flex; align-items: center; justify-content: center; text-align: center;
+    }
+    .roadmap-card h3{
+      margin: 0; font-weight: 800; font-size: clamp(20px, 3vw, 42px); line-height: 1.2;
+      overflow-wrap: anywhere; word-break: break-word; color:var(--blue-light)
+    }
+    @media (max-width: 768px){ .roadmap-grid{ grid-template-columns: 1fr; } }
+
+    /* image de fond uniquement pour la box About */
+    .about-box {
+      background: url('assets/img/hero-boob1.jpeg') center/cover no-repeat;
+      background-color: #9ad1f7;
+      background-size: 70%;
+    }
+
+    .about-box2 {
+      background: url('assets/img/img5.png') center/cover no-repeat;
+      background-color: #9ad1f7;
+      width: 100%;
+    }
+
+    /* Contrôle la taille de la bulle (gardé comme version initiale) */
+    .custom-oval {
+      max-width: 300px;
+      min-height: 180px;
+      margin-top: -100px;
+    }
+
+    /* Taille du titre dans la bulle */
+    .custom-title {
+      font-size: 20px;
+      margin-bottom: 6px;
+      margin-top: 15px;
+    }
+
+    /* Taille du texte */
+    .custom-text {
+      font-size: 20px;
+      line-height: 1.3;
+    }
+
+    /* Le conteneur s'adapte au contenu (fond blanc s'arrête après le bouton) */
+    .copy-wrap{
+      display:inline-flex;
+      align-items:center;
+      gap:12px;
+      background: #9ad1f7;
+      border:1px solid #212529;
+      border-radius:12px;
+      padding:12px 14px;
+      box-shadow:5px 5px 0 #000;
+      max-width:100%;
+    }
+    .copy-input{
+      border:0;
+      background:transparent;
+      color: #695897;
+      font-weight:700;
+      font-family:inherit;
+      line-height:1.2;
+      padding:0;
+      width:auto;
+      flex:0 0 auto;
+    }
+    .copy-btn{
+      flex:0 0 auto;
+      position:relative;
+      z-index:1;
+    }
+
+    /* Galerie */
+    .img-card { background-color: #fff; border-radius: 8px; padding: 10px; box-shadow: 5px 5px 0 #000; }
+
+    /* Effets JS ajoutés */
+    .gsap-card-animation { opacity: 0; transform: translateY(50px); }
+  </style>
+</head>
+
+<body class="bg-primary overflow-x-hidden">
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg primary-header primary-header--transparent-light-alt primary-header--fixed top-0 primary-header-crossed:full-dark">
+  <div class="container align-items-lg-center">
+    <a class="logo" href="index.html">
+      <img src="assets/img/logo_boob.gif" alt="image" class="logo__img logo__img--light" />
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbar0">
+      <ul class="navbar-nav flex-grow-1 justify-content-center mx-lg-4 mb-2 mb-lg-0">
+        <p>&nbsp;</p>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ================ SMOOTH WRAPPER ================ -->
+<div id="smooth-wrapper">
+  <div id="smooth-content">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero-1 section-space-top">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10 col-xl-9 text-center" style="padding-top: 40px">
+            <h1 class="hero-1__title mb-10 title-color-1 text-stroke-md text-shadow-md gsap-text-animation"
+                data-split-type="chars" data-delay="0.75">
+              BASED BOOB
+            </h1>
+
+            <!-- Boutons -->
+            <div class="d-flex justify-content-center align-items-center flex-wrap gap-4">
+              <script>
+                function copyToClipboard() {
+                  const input = document.getElementById("copyInput");
+                  navigator.clipboard.writeText(input.value).then(() => {
+                  }).catch(() => { console.log("ERROR"); });
+                }
+              </script>
+
+              <!-- Bouton 1 -->
+              <a href="https://dexscreener.com/base/0x432cf1cd31be21307b1af67e2069c77b71e0c4aa" target="_blank"
+                 class="btn btn-lg  align-items-center rounded gsap-fade-in"
+                 data-delay="1" data-y="50%"
+                 style="margin-top:200px; background-color:#9ad1f7; color:#695897; font-family:'Inter', sans-serif; font-weight:700; z-index:1000; position:relative;">
+                <span class="d-inline-block">Dexscreener</span>
+              </a>
+
+              <!-- Bouton 2 -->
+              <a href="https://app.uniswap.org/explore/tokens/base/0x6d2B398D6430cd16A57667661a51A8b0FaA2BBaf" target="_blank"
+                 class="btn btn-lg align-items-center rounded gsap-fade-in"
+                 data-delay="1.15" data-y="50%"
+                 style="margin-top:200px; background-color:#9ad1f7; color:#695897; font-family:'Inter', sans-serif; font-weight:700; z-index:1000; position:relative;">
+                <span class="d-inline-block">Buy Now</span>
+              </a>
+            </div>
+
+            <!-- Image hero (inline styles conservés) -->
+            <div>
+              <img
+                src="assets/img/boob_logo_2.gif"
+                alt="image"
+                style="margin-left:-500px ;width:1800px; height:650px;margin-top:-650px; padding-top: 100px; z-index:-2;position: relative;"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Contract copier -->
+        <div class="col-12" style="margin:20px; margin-left: 400px;">
+          <div class="copy-wrap gsap-fade-in" data-scroll-trigger="true" data-y="10">
+            <input id="copyInput"
+                   type="text"
+                   class="copy-input"
+                   value="0x6d2B398D6430cd16A57667661a51A8b0FaA2BBaf"
+                   readonly
+                   size="44" />
+            <button type="button" class="btn btn-icon btn-secondary copy-btn" onclick="copyToClipboard()">
+              <iconify-icon icon="iconamoon:copy-light"></iconify-icon>
+            </button>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+    <!-- ============== HERO END ============== -->
+
+    <!-- ================= TICKER HORIZONTAL ================= -->
+    <section class="ticker-2 py-4 border-top border-bottom border-2x border-dark gsap-fade-in"
+             data-delay="3.5"
+             style="transform:none; background:#9ad1f7; color:#fff; width:100%; border-radius:50px; overflow:hidden;">
+      <div class="container-fluid p-0">
+        <div class="row g-0">
+          <div class="col-12">
+            <div class="scroller-x" data-speed="fast" data-direction="right">
+              <ul class="list list-row align-items-center gap-4 scroller-x__list">
+                <li><img src="assets/img/hero_boob2.png" alt="image" class="img-fluid" width="100px" height="50px" /></li>
+                <li><img src="assets/img/boob_logo_1.gif" alt="image" class="img-fluid" width="200px" height="100%" /></li>
+                <li><img src="assets/img/hero_boob2.png" alt="image" class="img-fluid" width="100px" height="50px" /></li>
+                <li><h4 class="mb-0 text-secondary text-stroke text-shadow">BASED BOOB</h4></li>
+                <li><img src="assets/img/hero_boob2.png" alt="image" class="img-fluid" width="100px" height="50px" /></li>
+                <li><img src="assets/img/boob_logo_1.gif" alt="image" class="img-fluid" width="200px" height="100%" /></li>
+                <li><img src="assets/img/hero_boob2.png" alt="image" class="img-fluid" width="100px" height="50px" /></li>
+                <li><h4 class="mb-0 text-secondary text-stroke text-shadow">BASED BOOB</h4></li>
+                <li><img src="assets/img/hero_boob2.png" alt="image" class="img-fluid" width="100px" height="50px" /></li>
+                <li><img src="assets/img/boob_logo_1.gif" alt="image" class="img-fluid" width="200px" height="100%" /></li>
+                <li><img src="assets/img/hero_boob2.png" alt="image" class="img-fluid" width="100px" height="50px" /></li>
+                <li><h4 class="mb-0 text-secondary text-stroke text-shadow">BASED BOOB</h4></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ============== TICKER HORIZONTAL END ============== -->
+
+    <!-- ================= ABOUT ================= -->
+    <section class="section-space-y overflow-hidden gsap-fade-in" id="AboutMeme">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+
+          <!-- Texte -->
+          <div class="col-md-7">
+            <div class="about-box position-relative px-6 py-8 px-xl-10 py-xl-12 px-xxl-15 py-xxl-18 rounded-5 border border-2x border-dark shadow-sharp-md z-1 gsap-fade-in"
+                 data-scroll-trigger="true" data-delay="0.75">
+              <h2 class="about-title title-color-1 text-stroke text-shadow">What is BOOB</h2>
+
+              <p class="about-text mb-8 fs-24 ">
+                Based Boob ($BOOB) is the guilty pleasure of Base. Boobs are everywhere, from half the men to all the women, in every size and every curve. They bounce, they jiggle, they seduce. That universal energy fuels $BOOB, turning one of humanity’s oldest fascinations into a living meme on-chain.
+
+              </p>
+
+              <div class="d-flex align-items-center flex-wrap gap-6" style="padding-left: 150px;">
+
+
+                <ul class="list list-row align-items-center flex-wrap gap-4">
+                  <li>
+                    <a href="https://x.com/based_boob"
+                       class="btn btn-icon btn-lg rounded-circle" style="background-color: #695897; margin-top: 80px; margin-left: -30px" target="_blank">
+                      <iconify-icon icon="prime:twitter"></iconify-icon>
+                    </a>
+                  </li>
+                  <a href="https://app.uniswap.org/explore/tokens/base/0x6d2B398D6430cd16A57667661a51A8b0FaA2BBaf"
+                     class="btn btn-lg btn-light  align-items-center rounded" style="background-color: #695897; color: #9ad1f7; margin-top: 80px; margin-left: 55px" target="_blank">
+                    Buy Token
+                  </a>
+                  <li>
+                    <a href="https://t.me/basedBoobgate"
+                       class="btn btn-icon btn-lg  rounded-circle" style="background-color: #695897; margin-top: 80px; margin-left: 55px" target="_blank">
+                      <iconify-icon icon="uil:telegram"></iconify-icon>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3" style="margin-left: 180px;">
+            <img src="assets/img/img5.png" alt="image" class="img-fluid gsap-fade-in" data-scroll-trigger="true" data-y="10"
+                 style="margin-bottom : 20px;background-color: #9ad1f7; border-radius: 8px; padding: 10px; box-shadow: 10px 10px 0px #212529;" />
+            <img src="assets/img/img6.png" alt="image" class="img-fluid gsap-fade-in" data-scroll-trigger="true" data-y="10"
+                 style="background-color: #9ad1f7; border-radius: 8px; padding: 10px; box-shadow: 10px 10px 0px #212529;" />
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <!-- ============== ABOUT END ============== -->
+    <!-- ================= HOW TO BUY ================= -->
+    <div class="section-space-md-bottom ">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2 class=" title-color-1 text-center  text-stroke-md text-shadow-md fs-6vw gsap-text-animation">
+              HOW TO BUY
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenu -->
+    <section class="howto-section">
+      <div class="container-fluid container-fhd">
+        <div class="row">
+          <div class="col-12">
+            <div class="how-to-buy-section-1 section-space-y">
+
+              <!-- 4 petites bulles sur la même ligne -->
+              <div class="container">
+                <div class="row justify-content-center">
+
+                  <div class="col-6 col-md-3 d-flex justify-content-center">
+                    <div class="oval-card custom-oval gsap-card-animation" data-delay="0.2">
+                      <div class="oval-inner">
+                        <h6 class="oval-title custom-title">SET UP A WALLET</h6>
+                        <hr class="oval-sep" />
+                        <p class="oval-text custom-text">Download and instal phantom wallet. Create a new wallet and securely back up your recovery phrase.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-6 col-md-3 d-flex justify-content-center">
+                    <div class="oval-card custom-oval gsap-card-animation" data-delay="0.4">
+                      <div class="oval-inner">
+                        <h6 class="oval-title custom-title">CONNECT TO BASE <br> NETWORK</h6>
+                        <hr class="oval-sep" />
+                        <p class="oval-text custom-text">In phantom, go to settings and add the base network manually or access a dApp like Uniswap on base, which will prompt you to switch networks.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-6 col-md-3 d-flex justify-content-center">
+                    <div class="oval-card custom-oval gsap-card-animation" data-delay="0.6">
+                      <div class="oval-inner">
+                        <h6 class="oval-title custom-title">BUY ETH ON BASE</h6>
+                        <hr class="oval-sep" />
+                        <p class="oval-text custom-text">Purchase ETH through a centralized exchange then transfer your ETH to your Base wallet, ensuring that you select the 'Base' or 'Base Mainnet' network during the transfer.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-6 col-md-3 d-flex justify-content-center">
+                    <div class="oval-card custom-oval gsap-card-animation" data-delay="0.8">
+                      <div class="oval-inner">
+                        <h6 class="oval-title custom-title">SWAP ON PHANTOM <br> OR UNISWAP</h6>
+                        <hr class="oval-sep" />
+                        <p class="oval-text custom-text">Open your wallet on Phantom or Uniswap,<br>search for
+                           $BOOB CA (it's : 0x6d2B398D6430cd16A<br>57667661a51A8b<br>0FaA2BBaf),<br>and swap your ETH for BASED BOOB</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ============== HOW TO BUY END ============== -->
+
+    <!-- ================= TICKER3 ================= -->
+    <section class="ticker-2 py-4 border-top border-bottom border-2x border-dark gsap-fade-in"
+             data-delay="3.5"
+             style="transform:none; background:#9ad1f7; color:#fff; width:100%; border-radius:50px; overflow:hidden;">
+      <div class="container-fluid p-0">
+        <div class="row g-0">
+          <div class="col-12">
+            <div class="scroller-x" data-speed="fast" data-direction="right">
+              <ul class="list list-row align-items-center gap-4 scroller-x__list">
+                <li><img src="assets/img/hero_boob2.png" alt="image" class="img-fluid" width="100px" height="50px" /></li>
+                <li><img src="assets/img/boob_logo_1.gif" alt="image" class="img-fluid" width="200px" height="100%" /></li>
+                <li><img src="assets/img/hero_boob2.png" alt="image" class="img-fluid" width="100px" height="50px" /></li>
+                <li><h4 class="mb-0 text-secondary text-stroke text-shadow">BASED BOOB</h4></li>
+                <li><img src="assets/img/hero_boob2.png" alt="image" class="img-fluid" width="100px" height="50px" /></li>
+                <li><img src="assets/img/boob_logo_1.gif" alt="image" class="img-fluid" width="200px" height="100%" /></li>
+                <li><img src="assets/img/hero_boob2.png" alt="image" class="img-fluid" width="100px" height="50px" /></li>
+                <li><h4 class="mb-0 text-secondary text-stroke text-shadow">BASED BOOB</h4></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ============== TICKER3 END ============== -->
+
+    <!-- ================= TOKENOMICS ================= -->
+    <section class="section-space-y">
+      <div class="section-space-md-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h2 class="mb-0 text-center title-color-1 text-stroke-md text-shadow-md fs-6vw gsap-text-animation"
+                  data-scroll-trigger="true" data-split-type="words">
+                TOKENOMICS <br>Token Distribution
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="tok-grid">
+          <div class="tok-card gsap-card-animation" data-delay="0.2">
+            <h2>1 Billion token total </h2>
+          </div>
+          <div class="tok-card gsap-card-animation" data-delay="0.4">
+            <h2>Lp Locked <br> 85% Lp</br>Contract Renounced</h2>
+          </div>
+          <div class="tok-card gsap-card-animation" data-delay="0.6">
+            <h2>DEV <br>15% : <br> Cex<br>
+              Marketing <br>
+              Art</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ============== TOKENOMICS END ============== -->
+    <!-- ================= TICKER4 ================= -->
+    <section class="ticker-2 py-4 border-top border-bottom border-2x border-dark gsap-fade-in"
+             data-delay="3.5"
+             style="transform:none; background:#9ad1f7; color:#fff; width:100%; border-radius:50px; overflow:hidden;">
+      <div class="container-fluid p-0">
+        <div class="row g-0">
+          <div class="col-12">
+            <div class="scroller-x" data-speed="fast" data-direction="left">
+              <ul class="list list-row align-items-center gap-4 scroller-x__list">
+                <li><img src="assets/img/hero_boob2.png" alt="image" class="img-fluid" width="100px" height="50px" /></li>
+                <li><img src="assets/img/boob_logo_1.gif" alt="image" class="img-fluid" width="200px" height="100%" /></li>
+                <li><img src="assets/img/hero_boob2.png" alt="image" class="img-fluid" width="100px" height="50px" /></li>
+                <li><h4 class="mb-0 text-secondary text-stroke text-shadow">BASED BOOB</h4></li>
+
+                <li><img src="assets/img/hero_boob2.png" alt="image" class="img-fluid" width="100px" height="50px" /></li>
+                <li><img src="assets/img/boob_logo_1.gif" alt="image" class="img-fluid" width="200px" height="100%" /></li>
+                <li><img src="assets/img/hero_boob2.png" alt="image" class="img-fluid" width="100px" height="50px" /></li>
+                <li><h4 class="mb-0 text-secondary text-stroke text-shadow">BASED BOOB</h4></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ============== TICKER4 END ============== -->
+    <!-- ============== ROAD MAP  ============== -->
+    <section class="roadmap-section" >
+      <div class="section-space-md-bottom" >
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h2 class="mb-0 text-center title-color-2 text-stroke-md text-shadow-md fs-6vw gsap-text-animation"
+                  data-scroll-trigger="true" data-split-type="words">
+                ROAD MAP
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="roadmap-grid">
+          <!-- Col 1 / Ligne 1 -->
+          <div class="roadmap-card">
+            <h3>Coingecko</h3>
+          </div>
+
+          <!-- Col 2 / Ligne 1 -->
+          <div class="roadmap-card">
+            <h3>Marketing</h3>
+          </div>
+
+          <!-- Col 1 / Ligne 2 -->
+          <div class="roadmap-card">
+            <h3>CoinMarketCap</h3>
+          </div>
+
+          <!-- Col 2 / Ligne 2 -->
+          <div class="roadmap-card">
+            <h3>CEX Listing</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Réseaux sociaux -->
+      <ul class="list list-row gap-4 justify-content-center mt-8 flex-wrap">
+        <li>
+          <a href="https://x.com/based_boob"
+             class="btn btn-icon btn-lg rounded-circle" style="background-color: #695897;" target="_blank">
+            <iconify-icon icon="prime:twitter"></iconify-icon>
+          </a>
+        </li>
+        <li>
+          <a href="https://t.me/basedBoobgate"
+             class="btn btn-icon btn-lg rounded-circle" style="background-color: #695897;" target="_blank">
+            <iconify-icon icon="ri:telegram-fill"></iconify-icon>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <!-- ============== ROAD MAP END ============== -->
+    <!-- ================= TICKER4 ================= -->
+    <section class="ticker-2 py-4 border-top border-bottom border-2x border-dark gsap-fade-in"
+             data-delay="3.5"
+             style="transform:none; background:#9ad1f7; color:#fff; width:100%; border-radius:50px; overflow:hidden;">
+      <div class="container-fluid p-0">
+        <div class="row g-0">
+          <div class="col-12">
+            <div class="scroller-x" data-speed="fast" data-direction="left">
+              <ul class="list list-row align-items-center gap-4 scroller-x__list">
+                <li><img src="assets/img/hero_boob2.png" alt="image" class="img-fluid" width="100px" height="50px" /></li>
+                <li><img src="assets/img/boob_logo_1.gif" alt="image" class="img-fluid" width="200px" height="100%" /></li>
+                <li><img src="assets/img/hero_boob2.png" alt="image" class="img-fluid" width="100px" height="50px" /></li>
+                <li><h4 class="mb-0 text-secondary text-stroke text-shadow">BASED BOOB</h4></li>
+
+                <li><img src="assets/img/hero_boob2.png" alt="image" class="img-fluid" width="100px" height="50px" /></li>
+                <li><img src="assets/img/boob_logo_1.gif" alt="image" class="img-fluid" width="200px" height="100%" /></li>
+                <li><img src="assets/img/hero_boob2.png" alt="image" class="img-fluid" width="100px" height="50px" /></li>
+                <li><h4 class="mb-0 text-secondary text-stroke text-shadow">BASED BOOB</h4></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ============== TICKER4 END ============== -->
+
+
+    <!-- ================= GALERIE ================= -->
+    <section class="section-space-y">
+      <div class="section-space-md-bottom">
+        <div class="container">
+          <div class="row">
+            <h2 class="mb-0 text-center title-color-1 text-stroke-md text-shadow-md fs-6vw gsap-text-animation"
+                data-scroll-trigger="true" data-split-type="words">
+              GALLERY
+            </h2>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row g-4">
+          <!-- mêmes images/styles inline conservés -->
+          <div class="col-6">
+            <img src="assets/img/img1.png" alt="image" class="img-fluid gsap-fade-in img-card" data-scroll-trigger="true" data-y="10" />
+          </div>
+          <div class="col-6">
+            <img src="assets/img/img2.png" alt="image" class="img-fluid gsap-fade-in img-card" data-scroll-trigger="true" data-y="10" />
+          </div>
+          <div class="col-6">
+            <img src="assets/img/img3.png" alt="image" class="img-fluid gsap-fade-in img-card" data-scroll-trigger="true" data-y="10" />
+          </div>
+          <div class="col-6">
+            <img src="assets/img/img4.png" alt="image" class="img-fluid gsap-fade-in img-card" data-scroll-trigger="true" data-y="10" />
+          </div>
+          <div class="col-6">
+            <img src="assets/img/img5.png" alt="image" class="img-fluid gsap-fade-in img-card" data-scroll-trigger="true" data-y="10" />
+          </div>
+          <div class="col-6">
+            <img src="assets/img/img6.png" alt="image" class="img-fluid gsap-fade-in img-card" data-scroll-trigger="true" data-y="10" />
+          </div>
+          <div class="col-6">
+            <img src="assets/img/img7.png" alt="image" class="img-fluid gsap-fade-in img-card" data-scroll-trigger="true" data-y="10" />
+          </div>
+          <div class="col-6">
+            <img src="assets/img/img8.png" alt="image" class="img-fluid gsap-fade-in img-card" data-scroll-trigger="true" data-y="10" />
+          </div>
+          <div class="col-6">
+            <img src="assets/img/img9.png" alt="image" class="img-fluid gsap-fade-in img-card" data-scroll-trigger="true" data-y="10" />
+          </div>
+          <div class="col-6">
+            <img src="assets/img/img10.png" alt="image" class="img-fluid gsap-fade-in img-card" data-scroll-trigger="true" data-y="10" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ============== GALERIE END ============== -->
+
+    <!-- ================= TICKER5 ================= -->
+    <section class="ticker-2 py-4 border-top border-bottom border-2x border-dark gsap-fade-in"
+             data-delay="3.5"
+             style="transform:none; background:#9ad1f7; color:#fff; width:100%; border-radius:50px; overflow:hidden;">
+      <div class="container-fluid p-0">
+        <div class="row g-0">
+          <div class="col-12">
+            <div class="scroller-x" data-speed="fast" data-direction="right">
+              <ul class="list list-row align-items-center gap-4 scroller-x__list">
+                <li><img src="assets/img/hero_boob2.png" alt="image" class="img-fluid" width="100px" height="50px" /></li>
+                <li><img src="assets/img/boob_logo_1.gif" alt="image" class="img-fluid" width="200px" height="100%" /></li>
+                <li><img src="assets/img/hero_boob2.png" alt="image" class="img-fluid" width="100px" height="50px" /></li>
+                <li><h4 class="mb-0 text-secondary text-stroke text-shadow">JOIN US</h4></li>
+
+                <li><img src="assets/img/hero_boob2.png" alt="image" class="img-fluid" width="100px" height="50px" /></li>
+                <li><img src="assets/img/boob_logo_1.gif" alt="image" class="img-fluid" width="200px" height="100%" /></li>
+                <li><img src="assets/img/hero_boob2.png" alt="image" class="img-fluid" width="100px" height="50px" /></li>
+                <li><h4 class="mb-0 text-secondary text-stroke text-shadow">JOIN US</h4></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <!-- ============== TICKER5 END ============== -->
+
+    <!-- Réseaux sociaux + image -->
+    <div class="d-flex justify-content-center align-items-center gap-4 flex-wrap" style="margin-top:80px; margin-bottom:150px;">
+
+      <ul class="list list-row gap-4 justify-content-center flex-wrap mb-0">
+        <li>
+          <a href="https://x.com/based_boob"
+             class="btn btn-icon btn-lg rounded-circle"
+             style="background-color: #695897;margin-bottom: 80px" target="_blank">
+            <iconify-icon icon="prime:twitter"></iconify-icon>
+          </a>
+        </li>
+
+      </ul>
+
+      <img src="assets/img/boob_logo_2.gif" alt="Right decoration"
+           style="width:500px; height:auto;margin-left: 50px; margin-right: 50px;margin-bottom: 80px;" />
+
+
+      <a href="https://t.me/basedBoobgate"
+         class="btn btn-icon btn-lg rounded-circle"
+         style="background-color: #695897;margin-bottom: 80px" target="_blank">
+        <iconify-icon icon="ri:telegram-fill"></iconify-icon>
+      </a>
+
+    </div>
+
+
+  </div> <!-- /smooth-content -->
+</div> <!-- /smooth-wrapper -->
+
+<!-- ================= SCRIPTS ================= -->
+<script src="assets/js/bootstrap.bundle.js"></script>
+<script src="assets/js/iconify.js"></script>
+<script src="assets/js/simplebar.js"></script>
+<script src="assets/js/gsap.min.js"></script>
+<script src="assets/js/ScrollSmoother.min.js"></script>
+<script src="assets/js/ScrollTrigger.min.js"></script>
+<script src="assets/js/SplitText.min.js"></script>
+<script src="assets/js/Flip.min.js"></script>
+
+<!-- Effets GSAP ciblés -->
+<script>
+  (function () {
+    // Lance après le DOM prêt
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initAnim);
+    } else {
+      initAnim();
+    }
+
+    function initAnim() {
+      if (!window.gsap) return console.warn("[GSAP] manquant");
+
+      // Plugins
+      try {
+        if (window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
+        if (window.SplitText) gsap.registerPlugin(SplitText);
+      } catch (e) {}
+
+      // ===== 1) Titre HOW TO BUY =====
+      const title = document.querySelector(".js-title-howto");
+      if (title) {
+        if (window.SplitText) {
+          const split = new SplitText(title, { type: "chars,words" });
+          gsap.from(split.chars, {
+            scrollTrigger: { trigger: title, start: "top 85%", once: true },
+            opacity: 0,
+            y: 20,
+            stagger: 0.02,
+            duration: 0.6,
+            ease: "power2.out"
+          });
+        } else {
+          gsap.from(title, {
+            scrollTrigger: { trigger: title, start: "top 85%", once: true },
+            opacity: 0,
+            y: 24,
+            duration: 0.8,
+            ease: "power2.out"
+          });
+        }
+      }
+
+      // Utilitaire pour tickers
+      function animTicker(sel) {
+        const el = document.querySelector(sel);
+        if (!el) return;
+        gsap.from(el, {
+          scrollTrigger: { trigger: el, start: "top 90%", once: true },
+          opacity: 0,
+          y: 40,
+          duration: 0.8,
+          ease: "power2.out"
+        });
+      }
+
+      // ===== 2) Tickers ciblés =====
+      animTicker("#ticker-after-howto");
+      animTicker("#ticker-after-tokenomics");
+      animTicker("#ticker-after-roadmap");
+
+      // ===== 3) Cartes Road Map =====
+      const cards = gsap.utils.toArray(".roadmap-card");
+      if (cards.length) {
+        gsap.from(cards, {
+          scrollTrigger: {
+            trigger: cards[0].closest(".roadmap-grid") || cards[0],
+            start: "top 85%",
+            once: true
+          },
+          opacity: 0,
+          y: 30,
+          duration: 0.7,
+          ease: "power2.out",
+          stagger: 0.12
+        });
+      }
+
+      // ===== 4) Logos X & Telegram (bas de page) =====
+      const socials = gsap.utils.toArray(".js-social-bounce");
+      if (socials.length) {
+        gsap.from(socials, {
+          scrollTrigger: {
+            trigger: socials[0].closest("div") || socials[0],
+            start: "top 90%",
+            once: true
+          },
+          opacity: 0,
+          y: 20,
+          duration: 0.6,
+          ease: "power2.out",
+          stagger: 0.08
+        });
+
+        // petit effet hover
+        socials.forEach((btn) => {
+          let over = false;
+          btn.addEventListener("mouseenter", () => {
+            if (over) return; over = true;
+            gsap.to(btn, { scale: 1.06, y: -2, duration: 0.2, ease: "power1.out" });
+          });
+          btn.addEventListener("mouseleave", () => {
+            over = false;
+            gsap.to(btn, { scale: 1, y: 0, duration: 0.2, ease: "power1.out" });
+          });
+        });
+      }
+
+      // ===== 5) On laisse ton anim existante pour .gsap-card-animation =====
+      if (window.ScrollTrigger) {
+        gsap.utils.toArray('.gsap-card-animation').forEach((el) => {
+          gsap.to(el, {
+            scrollTrigger: { trigger: el, start: 'top 85%' },
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            delay: el.dataset.delay ? parseFloat(el.dataset.delay) : 0
+          });
+        });
+      }
+    }
+  })();
+</script>
+
+
+<script src="assets/js/app.js"></script>
+
+</body>
+</html>
