@@ -423,6 +423,15 @@
       html, body { overflow-x: hidden; }
       .container, .container-fluid { padding-left: 16px; padding-right: 16px; }
     }
+    /* Mobile : dézoome l'image de fond dans la section HOW TO BUY */
+    @media (max-width: 575.98px) {
+      .howto-section {
+        background-size: contain;   /* au lieu de cover → image complète */
+        background-position: top center; /* ajuste le cadrage */
+        min-height: 600px;          /* un peu moins haut sur mobile */
+        padding-bottom: 120px;      /* réduit l'espace vide */
+      }
+    }
 
 
 
